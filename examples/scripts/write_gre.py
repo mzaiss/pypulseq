@@ -51,7 +51,8 @@ def main(
         The GRE sequence object.
     """
     fov_x, fov_y = (fov, fov) if isinstance(fov, (int, float)) else fov
-    rf_spoiling_inc = 117
+    
+    rf_spoiling_inc = 84   # 84° for smoother transient decay, https://doi.org/10.1002/mrm.1910350216, 169° for diffusion independent rf spoiling in steady-state https://doi.org/10.1371/journal.pone.0324455  
 
     # Set system limits
     system = pp.Opts(
